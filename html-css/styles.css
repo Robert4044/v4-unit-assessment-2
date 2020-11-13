@@ -1,14 +1,176 @@
-/* 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-these are the colors used in the example
-***you can use them if you'd like or you can choose your own***
+ul {
+    list-style-type: none;
+}
 
-black - rgb(37, 37, 37)
-blue - rgb(42, 171, 226)
-shadow - rgba(102, 75, 75, .3)
-white - rgb(255, 255, 255) (default value) 
+img {
+    height: 125px;
+    width: 175px;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+}
 
-the font is called 'nunito' and can be found on google fonts
-***you can use it if you'd like or you can choose your own***
+.container {
+    height: 100%;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 10% 1fr 10%;
+    grid-template-areas:
+        'header header'
+        'skills skills'
+        'footer footer';
+}
+header {
+    grid-area: header;
+    position: fixed;
+    width: 100%;
+}
 
-*/
+.header-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 71px;
+    align-items: center;
+    background-color: rgb(37, 37, 37);
+    color: rgb(255, 255, 255);
+}
+
+.title {
+    font-size: 24px;
+    margin-left: 20px;
+    color: rgb(42, 171, 226);
+}
+.links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 71px;
+    margin-left: 30px;
+    font-size: 17px;
+    align-content: center;
+}
+li:first-child {
+    width: 55px;
+}
+li:nth-child(2) {
+    width: 55px;
+}
+li:nth-child(3) {
+    width: 55px;
+}
+li:last-child {
+    margin-left: 30px;
+    width: 55px;
+}
+
+.skills {
+    grid-area: skills;
+    width: 75%;
+    margin: auto auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+}
+
+.content {
+    margin-right: 60px;
+}
+
+.heading-main {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.h2 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.image-gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-box {
+    margin-top: 20px;
+    height: 275px;
+    width: 260px;
+    box-shadow: 0px 0px 24px -6px rgba(0, 0, 0, 0.79);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    height: 180px;
+    width: 180px;
+}
+
+.h1-name {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.article-box {
+    font-size: 14px;
+    width: 260px;
+    height: 360px;
+    box-shadow: 0px 0px 24px -6px rgba(0, 0, 0, 0.79);
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h2 {
+    margin-bottom: 20px;
+}
+.articles {
+    line-height: 25px;
+}
+
+footer {
+    grid-area: footer;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: rgb(42, 171, 226);
+    height: 71px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-class {
+    margin-left: 20px;
+}
+
+.circle {
+    height: 71px;
+    width: 71px;
+    margin-left: 93%;
+    position: fixed;
+    bottom: 0;
+}
