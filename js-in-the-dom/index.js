@@ -35,9 +35,43 @@ function validateForm() {
             name: nameInput.value,
             email: emailInput.value,
         });
+        displayThankYou();
     }
 }
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     validateForm();
 });
+
+function displayThankYou() {
+    formContainer.innerText = 'Thank you for subscribing!';
+    setTimeout(function () {
+        formContainer.remove();
+    }, 3000);
+}
+
+nameInput.addEventListener('change', function () {
+    nameInput.style.border = 'none';
+});
+
+emailInput.addEventListener('change', function () {
+    emailInput.style.border = 'none';
+});
+
+const cart = document.createElement('div');
+
+const main = document.querySelector('main');
+
+let cartItems = 0;
+
+function addToCart() {
+    if (cartItems === 0) {
+        cartItems = 1;
+        cart.setAttribute('class', 'cart-display');
+        cart.innerText = 'Your Cart: 1 item';
+        main.appendChild(cart);
+    } else {
+        cartItems = cartItems + 1;
+        cart.innerText = `Your Cart: ${cartItems}`;
+    }
+}
