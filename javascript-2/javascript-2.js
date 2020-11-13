@@ -106,7 +106,7 @@ const blueProducts = products.filter(product => {
 });
 console.log('blueProducts', blueProducts);
 
-// !Couldn't get it to give me the entire object back using filter
+// !This is saying I needed to use filter (it looks like I did, but maybe "includes" is doing the work?)
 
 // const blueProducts = products
 //     .map(product => {
@@ -135,7 +135,7 @@ let orderTotal = blueProducts
     .reduce((acc, cur) => {
         return acc + cur;
     });
-console.log(orderTotal); //! The test is saying "orderTotal should be the correct value"; The console.log says $1,600 which should be the correct value"; I'm certain there is an easier way to do this; if you're reading, please let me know
+console.log(orderTotal); //! The test is saying "orderTotal should be the correct value" and that I needed to reduce (I used reduce after map); The console.log says $1,600 which should be the correct value"; I'm certain there is an easier way to do this; if you're reading, please let me know
 //////////////////////////////////PROBLEMS 5-8//////////////////////////////////
 /*
   For these problems we will be using the objects below, contactInfo and shippingInfo,
