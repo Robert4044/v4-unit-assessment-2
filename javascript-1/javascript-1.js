@@ -191,17 +191,18 @@ for (let i = 0; i < classes.length; i++) {
 const lettersToPair = ['e', 'k', 's', 'a', 'e', 's', 'a', 'n', 'k', 'n'];
 let pairsArray = [];
 //DO NOT EDIT CODE ABOVE
-//TODO: Fix this!
-// for (let i = 0; i < lettersToPair.length; i++) {
-//     // console.log('i index:', lettersToPair[i]);
-//     for (let j = i + 1; j < lettersToPair.length; j++) {
-//         // console.log(lettersToPair[j]);
-//         if (lettersToPair[i] === lettersToPair[j]) {
-//             pairsArray.push(i);
-//         }
-//     }
-//     console.log(pairsArray);
-// }
+
+//TODO: Come back to this
+
+for (let i = 0; i < lettersToPair.length; i++) {
+    for (let j = i + 1; j < lettersToPair.length; j++) {
+        if (lettersToPair[i] === lettersToPair[j]) {
+            console.log(lettersToPair[i]);
+            pairsArray.push(lettersToPair[i]);
+        }
+    }
+    console.log(pairsArray);
+}
 
 //////////////////////////////////PROBLEMS 11-14//////////////////////////////////
 /*
@@ -265,9 +266,8 @@ function teachTrick(trick) {
     Invoke the bind method on teachTrick, passing in fido as the context and the string 'stay' as a trick.
     Save the result to a variable called 'teachStay'.
 */
-// TODO: Console log is fine; ask about this
 
-let teachStay = teachTrick.bind(fido, 'stay'); //! I think this is returning the correct value; shouldn't it be ["sit", "shake", "stay"]? That's what console.log is showing.
+let teachStay = teachTrick.bind(fido, 'stay'); //! I think this is returning the correct value; shouldn't it be ["sit", "shake", "stay"]? That's what console.log is showing. I see, it says "stay, stay"; no idea why
 console.log(teachStay());
 
 ////////////////////PROBLEM 14////////////////////
@@ -288,8 +288,7 @@ function dogIntro(treat, toy) {
     and save the result to a variable called fidoIntro.
 */
 
-//TODO: Console log is fine; as about this
-const fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball']); //! I could be missing something...ahh...but this is console logging correctly as well (I think)..."Fido is a Jack Russell that loves chicken and their tennis ball"
+const fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball']); //! I could be missing something but this is console logging correctly as well (I think)..."Fido is a Jack Russell that loves chicken and their tennis ball"
 console.log(fidoIntro);
 
 ////////////////////PROBLEM 15////////////////////
@@ -339,5 +338,3 @@ Phone.prototype.sell = function () {
 
     return `${this.brand} ${this.model} has been sold.`;
 };
-console.log(phone1.sell());
-console.log(phone1);
