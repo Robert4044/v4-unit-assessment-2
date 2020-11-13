@@ -191,7 +191,7 @@ for (let i = 0; i < classes.length; i++) {
 const lettersToPair = ['e', 'k', 's', 'a', 'e', 's', 'a', 'n', 'k', 'n'];
 let pairsArray = [];
 //DO NOT EDIT CODE ABOVE
-
+//TODO: Fix this!
 // for (let i = 0; i < lettersToPair.length; i++) {
 //     // console.log('i index:', lettersToPair[i]);
 //     for (let j = i + 1; j < lettersToPair.length; j++) {
@@ -256,12 +256,19 @@ console.log(fidoSpeak);
     Tricks will come from that context, so you should reference 'this.tricks' to access the correct array.
 */
 
+function teachTrick(trick) {
+    this.tricks.push(trick);
+    return this.tricks;
+}
+
 /*
     Invoke the bind method on teachTrick, passing in fido as the context and the string 'stay' as a trick.
     Save the result to a variable called 'teachStay'.
 */
+// TODO: Console log is fine; ask about this
 
-//CODE HERE
+let teachStay = teachTrick.bind(fido, 'stay'); //! I think this is returning the correct value; shouldn't it be ["sit", "shake", "stay"]? That's what console.log is showing.
+console.log(teachStay());
 
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -271,7 +278,9 @@ console.log(fidoSpeak);
     Remember to use the 'this' keyword to access values from the context that you will apply.
 */
 
-//CODE HERE
+function dogIntro(treat, toy) {
+    return `${this.name} is a ${this.breed} that loves ${treat} and their ${toy}`;
+}
 
 /*
     Invoke the apply method on dogIntro, passing in fido as the context 
@@ -279,7 +288,9 @@ console.log(fidoSpeak);
     and save the result to a variable called fidoIntro.
 */
 
-//CODE HERE
+//TODO: Console log is fine; as about this
+const fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball']); //! I could be missing something...ahh...but this is console logging correctly as well (I think)..."Fido is a Jack Russell that loves chicken and their tennis ball"
+console.log(fidoIntro);
 
 ////////////////////PROBLEM 15////////////////////
 /*
@@ -288,7 +299,13 @@ console.log(fidoSpeak);
     Those values should come from the function's parameters: brand, model, storage, color, sold (in order).
 */
 
-//CODE HERE
+function Phone(brand, model, storage, color, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.sold = sold;
+}
 
 /*
     Next make three new phones using your constructor function.
@@ -301,12 +318,11 @@ console.log(fidoSpeak);
     - sold, this should be false for each phone
 */
 
-//CODE HERE
-// let phone1 =
+let phone1 = new Phone('Apple', 'Iphone', 100, 'green', false);
 
-// let phone2 =
+let phone2 = new Phone('Samsung', 'Galaxy', 150, 'blue', false);
 
-// let phone3 =
+let phone3 = new Phone('Google', 'Pixel', 125, 'red', false);
 
 /*
     Last, add a prototype method to Phone.
@@ -315,5 +331,13 @@ console.log(fidoSpeak);
     returns the string: 'BRAND MODEL has been sold.'
     Don't forget about the context of BRAND and MODEL.
 */
+//TODO: return is fine; turn sold to true
+Phone.prototype.sell = function () {
+    if (this.sold === false) {
+        this.sold === true;
+    }
 
-//CODE HERE
+    return `${this.brand} ${this.model} has been sold.`;
+};
+console.log(phone1.sell());
+console.log(phone1);
