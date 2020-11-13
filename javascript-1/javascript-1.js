@@ -331,10 +331,10 @@ let phone3 = new Phone('Google', 'Pixel', 125, 'red', false);
     returns the string: 'BRAND MODEL has been sold.'
     Don't forget about the context of BRAND and MODEL.
 */
-//TODO: return is fine; turn sold to true
+
 Phone.prototype.sell = function () {
     if (this.sold === false) {
-        this.sold === true;
+        this.sold = true;
     }
 
     return `${this.brand} ${this.model} has been sold.`;
