@@ -198,7 +198,7 @@ for (let i = 0; i < lettersToPair.length; i++) {
     for (let j = i + 1; j < lettersToPair.length; j++) {
         if (lettersToPair[i] === lettersToPair[j]) {
             console.log(lettersToPair[i]);
-            pairsArray.push(lettersToPair[i]);
+            pairsArray.push(i);
         }
     }
     console.log(pairsArray);
