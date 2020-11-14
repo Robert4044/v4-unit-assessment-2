@@ -34,10 +34,13 @@ let foods = [
   Calories can be calculated by multiplying carbs by 4, protein by 4, fat by 9, 
   and then adding the results together. 
 */
-// !UGH!
+
 foods.forEach((food, index) => {
     let calories = food.carbs * 4 + food.protein * 4 + food.fat * 9;
-    foods.push({ calories: calories });
+    for (let key in foods) {
+        foods[key].calories = calories;
+    }
+    // foods.push({ calories: calories });
 });
 console.log(foods);
 
